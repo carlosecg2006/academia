@@ -82,6 +82,8 @@ Se o tempo estiver apertado (Opção B), **prefira a segunda opção**, que não
 
 ## 5.9 Como pedir ajuda ao professor
 
+> **Atualização:** você prefere não depender dos professores. Tudo bem. Nas máquinas, o **adesivo** de cada aparelho mostra como regular. Nos exercícios com barra, use o método de **filmar de lado** (guia de Costas). Se travar em algo **de segurança** (uma trava de leg press que você não sabe soltar, por exemplo), pedir ajuda pontual a qualquer funcionário continua sendo melhor do que arriscar.
+
 Professores de academia estão ali **para isso**. Peça de forma **objetiva**:
 - *"Pode me mostrar como regular esta máquina para o meu tamanho?"*
 - *"Pode me ver fazendo uma série e dizer se a postura está certa?"*

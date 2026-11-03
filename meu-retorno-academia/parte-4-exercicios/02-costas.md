@@ -9,6 +9,17 @@
 
 **Antes de começar:** leia [P1, P2, P3, P6, P9, P10, P11 e P12](00-posicoes-base.md).
 
+> ### Sem professor? Como aprender o Terra e a Remada curvada sozinho (atualização)
+> Você preferiu não depender dos professores. Tudo bem: o jeito seguro de aprender sozinho é este.
+> 1. **Em casa:** 3 séries de 10 do movimento de "dobradiça" com um **cabo de vassoura encostado nas costas**. Cabeça, meio das costas e bumbum ficam **sempre encostados** no cabo.
+> 2. **Na academia:** **barra vazia** (se ficar baixa demais, apoie em 2 steps). Deixe o **celular no chão filmando de lado**, a uns 2–3 m, na altura do quadril.
+> 3. **Assista ao vídeo:** costas retas do começo ao fim? Barra raspando nas pernas? Quadril e ombros subindo juntos? **Só aumente o peso se tudo estiver certo** e, mesmo assim, aos poucos.
+> 4. **Peça uma segunda opinião:** mande o vídeo para o **seu amigo** (ele conhece o exercício) ou para mim.
+> 5. **Remada curvada só depois do Terra**, porque para pegar a barra do chão você faz um Terra.
+>
+> Onde o texto abaixo diz "professor obrigatório", leia: "faça estes 5 passos antes".
+
+
 > 🧑‍🏫 **Atenção nesta sessão:** os exercícios **4 (Levantamento terra)** e **5 (Remada curvada com barra)** usam **barra livre**, sem máquina guiando o movimento. São os **mais técnicos** de todo o seu treino. **Faça-os só depois que um professor da academia demonstrar e conferir sua execução.** Até lá, registre-os como **"não executado: aguardando orientação"** (Parte 8). Isso **não altera** o treino: é a ordem de segurança para aprendê-lo.
 
 ---

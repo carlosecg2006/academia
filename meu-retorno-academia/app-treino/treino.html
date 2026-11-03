@@ -221,14 +221,14 @@ const EX = [
   erros:["Deitar o tronco para trás → menos carga.","Costas curvadas com o braço esticado → dobre o quadril, não a coluna."]},
  {id:"B4",s:"B",n:"Deadlift (Barbell)",pt:"Levantamento terra",pat:"p6",pi:3,prof:2,dl:1,hip:"6",
   proc:"Barra longa com anilhas, no chão.",
-  aviso:"SÓ COM PROFESSOR na primeira vez, com a barra vazia ou anilhas bem leves. Até lá, marque \"aguardando orientação\".",
+  aviso:"APRENDA ANTES (sem professor): 1) Em casa, faça 3×10 do movimento com um cabo de vassoura encostado nas costas (cabeça, meio das costas e bumbum sempre encostados). 2) Na academia, use a barra vazia (se ficar baixa demais, apoie em 2 steps). Deixe o celular no chão filmando DE LADO, a uns 2–3 m. 3) Assista: costas retas o tempo todo? Barra raspando nas pernas? Se sim, libere. Se não, repita com a barra vazia. Mande o vídeo para o seu amigo ou para mim conferir.",
   prep:["Pés na largura do quadril; barra sobre o meio do pé, perto das canelas.","Quadril para trás (como fechar a porta do carro com o bumbum), joelhos dobram o necessário.","Mãos na largura dos ombros, por fora das pernas.","Coluna reta (o cabo de vassoura encosta na cabeça, nas costas e no bumbum). Barriga firme."],
   exec:["Empurre o chão com os pés. Quadril e joelhos esticam juntos.","A barra sobe raspando nas pernas.","Em cima: fique reto, sem jogar o corpo para trás.","Para descer: quadril para trás primeiro, depois dobre os joelhos."],
   sente:"Bumbum e parte de trás da coxa. As costas ficam firmes, SEM dor.",
   erros:["Costas arredondando → pare a série.","Barra longe das pernas → ela tem que raspar.","Qualquer dor na lombar → pare e fale com o professor."]},
  {id:"B5",s:"B",n:"Bent Over Row (Barbell)",pt:"Remada curvada com barra",pat:"p6",pi:4,prof:2,dl:1,hip:"10",
   proc:"Barra longa com anilhas. Pergunte se dá para pegar no suporte (rack), na altura das coxas.",
-  aviso:"SÓ COM PROFESSOR na primeira vez, com a barra vazia.",
+  aviso:"APRENDA DEPOIS DO TERRA: faça só quando o levantamento terra já estiver liberado (para pegar a barra do chão você faz um terra). Use a barra vazia, filme de lado e confira se o tronco fica PARADO e as costas retas. Mande o vídeo para o seu amigo ou para mim.",
   prep:["Pés na largura do quadril, joelhos levemente dobrados.","Palmas para você, mãos na largura dos ombros.","Incline o tronco dobrando o quadril, quase paralelo ao chão, só até onde a coluna fica reta.","Olhe para o chão à frente. Barriga firme."],
   exec:["Puxe a barra em direção à barriga, cotovelos para trás.","Desça devagar.","O tronco fica PARADO."],
   sente:"Meio e laterais das costas.",
@@ -373,8 +373,8 @@ const EX = [
   erros:["Braços balançando → mantenha-os apoiados e parados."]},
  /* ---------- F GLÚTEO ---------- */
  {id:"F1",s:"F",n:"Hip Thrust",pt:"Elevação pélvica",pat:"b6",prof:1,
-  proc:"Máquina de elevação pélvica, se tiver. A versão com barra só com professor.",
-  aviso:"O tutorial diz máquina; o desenho do Hevy mostra barra. Use a máquina, se a academia tiver.",
+  proc:"Máquina de elevação pélvica, se tiver. A versão com barra fica para depois que você dominar o terra.",
+  aviso:"O tutorial diz máquina; o desenho do Hevy mostra barra. Use a máquina, se a academia tiver. Se só houver barra, comece com ela vazia e filme de lado.",
   prep:["Carga leve.","Parte de cima das costas (altura das escápulas) na almofada.","Cinta sobre o osso do quadril.","Pés na largura do quadril: no topo, a canela fica em pé (joelho a 90°).","Queixo recolhido, olhando para a frente."],
   exec:["Empurre com os calcanhares e suba o quadril até ombro, quadril e joelho ficarem em linha reta.","Aperte o bumbum 1 s, sem arquear a lombar.","Desça devagar."],
   sente:"Bumbum.",
@@ -501,7 +501,7 @@ function finishWorkout(reasonDefault){
     let status="ok", reason="";
     if(it.done<it.target){
       if(ex.spin){ status="no"; reason="tempo"; }
-      else if(ex.prof===2 && !S.released[it.id] && it.done===0){ status="no"; reason="aguardando professor"; }
+      else if(ex.prof===2 && !S.released[it.id] && it.done===0){ status="no"; reason="ainda aprendendo"; }
       else { status=it.done>0?"part":"pend"; reason=it.reason||reasonDefault; newPend.push({id:it.id, sets:it.target-it.done, reason, since:it.since||c.date}); }
     }
     rec.items.push({id:it.id, done:it.done, target:it.target, load:it.load, rir:it.rir, status, reason, pend:!!it.pend});
@@ -529,7 +529,7 @@ function guideHTML(ex, open){
     <div class="gsec"><h4>Onde sentir</h4><p>${esc(ex.sente)}</p></div>
     <div class="gsec"><h4>Errado se…</h4><ul class="plain">${li(ex.erros)}</ul></div>
     <div class="gsec"><h4>Respirar</h4><p>${ex.spin?"Natural e ritmado.":"Solte o ar no esforço e puxe o ar na volta. Nunca prenda."}</p></div>
-    ${ex.prof===2?`<div class="gsec danger-note"><b>Professor obrigatório</b> antes da primeira vez.</div>`:ex.prof===1?`<div class="gsec small muted">Na 1ª vez, peça a um professor para ajudar a regular.</div>`:""}
+    ${ex.prof===2?`<div class="gsec danger-note"><b>Exercício técnico:</b> faça os 3 passos de "Atenção" antes, com a barra vazia.</div>`:ex.prof===1?`<div class="gsec small muted">Na 1ª vez: leia o adesivo da máquina, use a carga mínima e vá devagar. Se quiser, filme de lado para conferir.</div>`:""}
   </details>`;
 }
 
@@ -556,7 +556,7 @@ function renderHoje(){
       <div style="margin-top:14px"><button class="btn primary wide" data-act="start">Começar treino</button></div>
     </div>
     ${first?`<div class="card"><h3>Primeiro dia</h3><ul class="plain small" style="margin-top:8px">
-      <li>Na recepção: "Estou voltando, sou iniciante, preciso de ajuda para regular os aparelhos."</li>
+      <li>Comece pelas máquinas: leia o adesivo de cada uma (ele mostra como regular) e use a carga mínima.</li>
       <li>Hoje o objetivo é aprender a regular e usar carga leve. Fazer metade já é ótimo.</li>
       <li>Dúvida? Pergunte. Dor estranha? Pare.</li></ul></div>`:""}
     <div class="card"><p class="eyebrow">Hoje você vai fazer</p><ol class="steps" style="margin-top:8px">${exs.map(e=>`<li><b>${esc(e.pt)}</b> · ${setsFor(e,S.week)}×${e.lado?" (cada lado)":""}</li>`).join("")}<li>Spinning</li></ol></div>
@@ -585,10 +585,10 @@ function itemHTML(it,i){
     <div class="ex-head"><div class="ex-num">${i+1}</div><div class="ex-main">
       <div class="ex-name">${esc(ex.pt)}</div>
       <div class="ex-sub">${esc(ex.n)} · ${it.target} série${it.target>1?"s":""}${ex.lado?" (cada lado)":""} · ${esc(repsHint(ex,S.current.week))}</div>
-      <div class="row" style="margin-top:6px">${it.pend?`<span class="pill warn">pendência</span>`:""}${it.late?`<span class="pill warn">fim do treino (pernas hoje)</span>`:""}${full?`<span class="pill ok">feito</span>`:""}${ex.prof===2?`<span class="pill danger">só com professor</span>`:""}</div>
+      <div class="row" style="margin-top:6px">${it.pend?`<span class="pill warn">pendência</span>`:""}${it.late?`<span class="pill warn">fim do treino (pernas hoje)</span>`:""}${full?`<span class="pill ok">feito</span>`:""}${ex.prof===2?`<span class="pill danger">aprender antes</span>`:""}</div>
     </div></div>
     <div class="ex-body">
-      ${locked?`<div class="danger-note">Ainda não liberado. Faça só se um professor estiver ao seu lado.<div style="margin-top:8px"><button class="btn small" data-act="release" data-id="${it.id}">Professor me ensinou: liberar</button></div></div>`:""}
+      ${locked?`<div class="danger-note">Ainda não liberado. Abra "Como fazer" e siga os 3 passos com a barra vazia e o celular filmando de lado.<div style="margin-top:8px"><button class="btn small" data-act="release" data-id="${it.id}">Vi o vídeo e as costas ficaram retas: liberar</button></div></div>`:""}
       <div class="sets">${chips}</div>
       ${ex.spin?"":`<div class="fields">
         <label for="ld-${i}">Carga (nº/kg)<input type="text" id="ld-${i}" inputmode="decimal" value="${esc(it.load)}" data-act="load" data-i="${i}" placeholder="${esc((S.loads[it.id]||{}).load||"ex.: placa 3")}"></label>
